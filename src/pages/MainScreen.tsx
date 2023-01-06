@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import Image from "next/image";
 import Section from "../pages/Section";
+import LuckyBoxSection from "../pages/LuckyBoxSection";
 // import tree from "/images/tree.png"; //아니 왜 이미지 태그 안먹음
 
 const mainScreen = () => {
+  const value = false; //조건부 렌더링 값
   return (
     <>
       <GradationDiv></GradationDiv>
@@ -27,7 +29,7 @@ const mainScreen = () => {
         <div>안잡아먹지</div>
         <div>복주머니를 주고받아 마음을 전달하세요</div>
       </HeaderCss>
-      <Section />
+      {value ? <Section /> : <LuckyBoxSection />}
     </>
   );
 };
