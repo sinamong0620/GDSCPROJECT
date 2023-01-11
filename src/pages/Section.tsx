@@ -24,6 +24,13 @@ const SectionContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1.5em 0;
+  min-width: 25rem;
+  @media (max-width: 1000px) {
+    img {
+      width: 63%;
+      height: 63%;
+    }
+  }
 `;
 const FooterBar = styled.div`
   text-align: center;
@@ -39,5 +46,8 @@ const FooterBar = styled.div`
     border-radius: 3em;
     color: #e2dbc1;
     background: #693d3d;
+    cursor: pointer;
+    @media (max-width: 1000px) {
+    }
   }
 `;

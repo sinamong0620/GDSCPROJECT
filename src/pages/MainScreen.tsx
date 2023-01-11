@@ -1,27 +1,33 @@
 import styled from "styled-components";
 import Image from "next/image";
-import Section from "../pages/Section";
-import LuckyBoxSection from "../pages/LuckyBoxSection";
+import Section from "./Section";
+import Login from "./Login";
+import LuckyBoxSelec from "./LuckyBoxSelec";
+import LuckyBoxSection from "./LuckyBoxSection";
+import MessageWrite from "./MessageWrite";
+import MyMesseage from "./MyMessage";
 // import tree from "/images/tree.png"; //아니 왜 이미지 태그 안먹음
 
 const mainScreen = () => {
-  const value = false; //조건부 렌더링 값
+  const value = true; //조건부 렌더링 값
   return (
     <>
       <GradationDiv></GradationDiv>
       <GradationDiv2></GradationDiv2>
+
       <TreeImage>
         <Image src="/images/tree.png" alt="tree" width={300} height={300} />
       </TreeImage>
-      <CloudImage>
-        <Image src="/images/pngegg.png" alt="tree" width={150} height={150} />
-      </CloudImage>
       <TreeImage2>
         <Image src="/images/tree1.png" alt="tree" width={300} height={300} />
       </TreeImage2>
+      <CloudImage>
+        <Image src="/images/pngegg.png" alt="tree" width={150} height={150} />
+      </CloudImage>
       <CloudImage2>
         <Image src="/images/pngegg.png" alt="tree" width={120} height={120} />
       </CloudImage2>
+
       <HeaderCss>
         <span>내 메시지 | </span>
         <span> 로그아웃</span>
@@ -42,7 +48,10 @@ const GradationDiv = styled.div`
   position: absolute;
   top: -15em;
   left: -15em;
-  z-index: -1;
+  z-index: -3;
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `;
 
 const GradationDiv2 = styled.div`
@@ -52,33 +61,45 @@ const GradationDiv2 = styled.div`
   position: absolute;
   bottom: -14em;
   right: -12em;
-  z-index: -1;
+  z-index: -3;
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `;
 
 const TreeImage = styled.div`
+  width: 18.75rem;
+  padding-bottom: 18.75rem;
   position: absolute;
   top: -2em;
   left: -1em;
-  z-index: 1;
+  z-index: -1;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 `;
 const TreeImage2 = styled.div`
   position: absolute;
   bottom: 1em;
   right: -3em;
-  z-index: 1;
+  z-index: -1;
 `;
 const CloudImage = styled.div`
   position: absolute;
   top: 9em;
   left: 6em;
+  z-index: -2;
 `;
 const CloudImage2 = styled.div`
   position: absolute;
-  bottom: 2em;
+  bottom: 1.5em;
   right: 8em;
+  z-index: -2;
 `;
 
 const HeaderCss = styled.header`
+  width: 100%;
   text-align: right;
   padding-right: 0.4em;
   color: #d79b00;

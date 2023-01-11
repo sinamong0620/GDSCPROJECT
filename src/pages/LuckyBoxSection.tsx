@@ -16,7 +16,6 @@ const LuckyBoxSection = () => {
           <Image src="/images/right.png" alt="right" width={65} height={65} />
         </button>
       </div>
-
       <div>총 메시지 개수 : {messageCount}개</div>
       <button>덕담 하기</button>
     </EntireContainer>
@@ -25,17 +24,26 @@ const LuckyBoxSection = () => {
 export default LuckyBoxSection;
 
 const EntireContainer = styled.section`
+  button:first-of-type {
+    //nth-child와 nth-of-type은 다르다. nth-of-type은 해당 요소만을 모아서 순서를 센다.
+    color: #f7f2e2;
+    background: #d46c6c;
+  }
+  div button:first-of-type {
+    //nth-child와 nth-of-type은 다르다. nth-of-type은 해당 요소만을 모아서 순서를 센다.
+    color: none;
+    background: none;
+  }
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  button:nth-child(3) {
+  button {
     border: none;
     font-size: 1em;
     padding: 1em 3em;
     border-radius: 3em;
-    color: #f7f2e2;
-    background: #d46c6c;
+    background: transparent;
   }
   button:hover {
     cursor: pointer;
@@ -43,7 +51,6 @@ const EntireContainer = styled.section`
   div {
     color: #d79b00;
   }
-
   div:nth-child(1) {
     display: flex;
     align-items: center;
